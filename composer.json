@@ -1,0 +1,31 @@
+{
+    "name": "timwassenburg/improved-resource-controllers",
+    "authors": [
+        {
+            "name": "Tim Wassenburg",
+            "email": "timwass@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TimWassenburg\\ImprovedResourceControllers\\": "src/",
+            "TimWassenburg\\ImprovedResourceControllers\\Tests\\": "tests/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\": "vendor/orchestra/testbench-core/laravel/app"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TimWassenburg\\ImprovedResourceControllers\\ImprovedResourceControllersServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.19"
+    }
+}

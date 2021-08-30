@@ -1,0 +1,104 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use {{ namespacedModel }};
+
+class {{ class }} extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return View
+     */
+    public function index()
+    {
+        ${{ modelVariablePlural }} = {{ model }}::all();
+
+        return view('{{ modelVariablePlural }}.index', compact('{{ modelVariablePlural }}'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return View
+     */
+    public function create()
+    {
+        return view('{{ modelVariablePlural }}.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function store(Request $request)
+    {
+        {{ model }}::create($request->all());
+
+        return redirect()->route('{{ modelVariablePlural }}.index')
+            ->with('message', '{{ model }} saved successfully.');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return View
+     */
+    public function show($id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+
+        return view('{{ modelVariablePlural }}.show', compact('{{ modelVariable }}'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return View
+     */
+    public function edit($id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+
+        return view('{{ modelVariablePlural }}.edit', compact('{{ modelVariable }}'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param int $id
+     * @return RedirectResponse
+     */
+    public function update(Request $request, $id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+        ${{ modelVariable }}->update($request->all());
+
+        return redirect()->route('{{ modelVariablePlural }}.index')
+            ->with('message', '{{ model }} updated successfully.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return RedirectResponse
+     */
+    public function destroy($id)
+    {
+        {{ model }}::destroy($id);
+
+        return redirect()->route('{{ modelVariablePlural }}.index')
+            ->with('message', '{{ model }} deleted successfully.');
+    }
+}

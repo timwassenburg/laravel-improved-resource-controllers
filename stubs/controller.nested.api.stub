@@ -1,0 +1,83 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ namespacedModel }};
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use {{ namespacedParentModel }};
+
+class {{ class }} extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @return JsonResponse
+     */
+    public function index({{ parentModel }} ${{ parentModelVariable }})
+    {
+        ${{ modelVariablePlural }} = ${{ parentModelVariable }}->{{ modelVariablePlural }};
+
+        return response()->json(${{ modelVariablePlural }});
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @return JsonResponse
+     */
+    public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }})
+    {
+        ${{ modelVariable }} = ${{ parentModelVariable }}->{{ modelVariablePlural }}()->create($request->all());
+
+        return response()->json(${{ modelVariable }}, Response::HTTP_CREATED);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return JsonResponse
+     */
+    public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        ${{ modelVariable }} = ${{ parentModelVariable }}->{{ modelVariablePlural }}->find(${{ modelVariable }});
+
+        return response()->json(${{ modelVariable }});
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request  $request
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return JsonResponse
+     */
+    public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        ${{ parentModelVariable }}->{{ modelVariablePlural }}->find(${{ modelVariable }})->update($request->all());
+
+        return response()->json(${{ modelVariable }}->fresh());
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return JsonResponse
+     */
+    public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        ${{ parentModelVariable }}->{{ modelVariablePlural }}->find(${{ modelVariable }})->delete();
+
+        return response()->json(null, RESPONSE::HTTP_NO_CONTENT);
+    }
+}

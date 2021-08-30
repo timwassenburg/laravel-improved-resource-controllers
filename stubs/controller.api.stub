@@ -1,0 +1,76 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Database\Eloquent\Collection;
+use {{ namespacedModel }};
+
+class {{ class }} extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Collection
+     */
+    public function index()
+    {
+        return {{ model }}::all();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return JsonResponse
+     */
+    public function store(Request $request)
+    {
+        ${{ modelVariable }} = {{ model }}::create($request->all());
+
+        return response()->json(${{ modelVariable }}, Response::HTTP_CREATED);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return JsonResponse
+     */
+    public function show($id)
+    {
+        return {{ model }}::findOrFail($id);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request  $request
+     * @param  int  $id
+     * @return JsonResponse
+     */
+    public function update(Request $request, $id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+        ${{ modelVariable }}->update($request->all());
+
+        return response()->json(${{ modelVariable }});
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return JsonResponse
+     */
+    public function destroy($id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+        ${{ modelVariable }}->delete();
+
+        return response()->json(null, RESPONSE::HTTP_NO_CONTENT);
+    }
+}

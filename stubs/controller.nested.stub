@@ -1,0 +1,107 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ namespacedModel }};
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use {{ namespacedParentModel }};
+
+class {{ class }} extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @return View
+     */
+    public function index({{ parentModel }} ${{ parentModelVariable }})
+    {
+        ${{ modelVariablePlural }} = ${{ parentModelVariable }}->{{ modelVariablePlural }};
+
+        return view('{{ modelVariablePlural }}.index', compact('{{ modelVariablePlural }}', '{{ parentModelVariable }}'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @return View
+     */
+    public function create({{ parentModel }} ${{ parentModelVariable }})
+    {
+        return view('{{ modelVariablePlural }}.create', compact('{{ parentModelVariable }}'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @return RedirectResponse
+     */
+    public function store(Request $request, {{ parentModel }} ${{ parentModelVariable }})
+    {
+        ${{ parentModelVariable }}->{{ modelVariablePlural }}()->create($request->all());
+
+        return redirect()->route('{{ parentModelVariablePlural }}.{{ modelVariablePlural }}.index', ${{ parentModelVariable }}->id)
+            ->with('message', '{{ model }} saved successfully.');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return View
+     */
+    public function show({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        return view('{{ modelVariablePlural }}.show', compact('{{ parentModelVariable }}', '{{ modelVariable }}'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return View
+     */
+    public function edit({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        return view('{{ modelVariablePlural }}.edit', compact('{{ parentModelVariable }}', '{{ modelVariable }}'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request  $request
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return RedirectResponse
+     */
+    public function update(Request $request, {{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        ${{ modelVariable }}->update($request->all());
+
+        return redirect()->route('{{ parentModelVariablePlural }}.{{ modelVariablePlural }}.index', ${{ parentModelVariable }}->id)
+            ->with('message', '{{ model }} updated successfully.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  {{ parentModel }}  ${{ parentModelVariable }}
+     * @param  {{ model }}  ${{ modelVariable }}
+     * @return RedirectResponse
+     */
+    public function destroy({{ parentModel }} ${{ parentModelVariable }}, {{ model }} ${{ modelVariable }})
+    {
+        ${{ modelVariable }}->delete();
+
+        return redirect()->route('{{ parentModelVariablePlural }}.{{ modelVariablePlural }}.index', ${{ parentModelVariable }}->id)
+            ->with('message', '{{ model }} deleted successfully.');
+    }
+}
