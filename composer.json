@@ -1,5 +1,8 @@
 {
     "name": "timwassenburg/improved-resource-controllers",
+    "license": "MIT",
+    "description": "Generate complete resource controllers",
+    "keywords": ["resource", "controllers", "php", "cli", "crud", "generator", "laravel", "artisan"],
     "authors": [
         {
             "name": "Tim Wassenburg",
