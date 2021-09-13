@@ -12,5 +12,5 @@ return [
     /*
      * The namespace of your models.
      */
-    'model_namespace' => 'App/Models/',
+    'model_namespace' => 'App\Models\\',
 ];
