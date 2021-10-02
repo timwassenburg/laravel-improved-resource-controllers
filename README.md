@@ -34,31 +34,38 @@ So no need to change your muscle memory. Checkout the example output to see the 
 ```
 php artisan make:controller CustomerController --resource
 ```
+[Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/DefaultResourceController.php)
 
 ### Default API resource controller
 ```
 php artisan make:controller CustomerController --resource --api
 ```
+[Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/DefaultApiResourceController.php)
 
 ### Model resource controller
 ```
 php artisan make:controller CustomerController --resource --model=Customer
 ```
+[Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/ModelResourceController.php)
 
 ### Model API resource controller
 ```
 php artisan make:controller CustomerController --resource --model=Customer --api
 ```
+[Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/ModelApiResourceController.php)
+
 
 ### Nested resource controller
 ```
 php artisan make:controller CityController --resource --parent=Country --model=City
 ```
+[Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/NestedResourceController.php)
 
 ### Nested API resource controller
 ```
 php artisan make:controller CityController --resource --parent=Country --model=City --api
 ```
+[Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/NestedApiResourceController.php)
 
 ### Variables
 In the stubs you can use the following variables.
