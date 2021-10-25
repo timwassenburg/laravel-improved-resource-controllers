@@ -6,9 +6,9 @@ Keep in mind the improved resource controllers are only meant as a starting poin
 You still have to add your own routes, validation, migrations, etc.
 
 ## Installation
-Require this package with composer. It is recommended to only require the package for development.
+Require the package with composer.
 ```
-composer require timwassenburg/laravel-improved-resource-controllers --dev
+composer require timwassenburg/laravel-improved-resource-controllers
 ```
 
 ### Publish config (optional)
