@@ -1,5 +1,4 @@
-# Laravel improved resource controllers
-
+# Laravel Improved Resource Controllers
 This simple package extends the ```php artisan make:controller``` command and generates
 resource controllers with working resource functions out of the box to prevent you from writing 
 the same basic controller functions over and over again.
@@ -9,7 +8,7 @@ You still have to add your own routes, validation, migrations, etc.
 ## Installation
 Require this package with composer. It is recommended to only require the package for development.
 ```
-composer require timwassenburg/improved-resource-controllers --dev
+composer require timwassenburg/laravel-improved-resource-controllers --dev
 ```
 
 ### Publish config (optional)
@@ -20,7 +19,6 @@ php artisan vendor:publish --provider="TimWassenburg\ImprovedResourceControllers
 ### Publish stubs (optional)
 To change the generated resource controllers you can override
 the stubs and adjust it to your liking. The stubs will be stored in /resources/stubs.
-
 
 ```
 php artisan vendor:publish --provider="TimWassenburg\ImprovedResourceControllers\ImprovedResourceControllersServiceProvider" --tag="stubs"
@@ -53,7 +51,6 @@ php artisan make:controller CustomerController --resource --model=Customer
 php artisan make:controller CustomerController --resource --model=Customer --api
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/ModelApiResourceController.php)
-
 
 ### Nested resource controller
 ```

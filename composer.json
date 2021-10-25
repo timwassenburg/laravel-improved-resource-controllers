@@ -1,5 +1,5 @@
 {
-    "name": "timwassenburg/improved-resource-controllers",
+    "name": "timwassenburg/laravel-improved-resource-controllers",
     "description": "Generate complete resource controllers",
     "keywords": ["resource", "controllers", "php", "cli", "crud", "generator", "laravel", "artisan"],
     "homepage": "https://github.com/timwassenburg/laravel-improved-resource-controllers",
