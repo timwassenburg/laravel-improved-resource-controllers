@@ -12,6 +12,10 @@
 <br><br>
 </div>
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/timwassenburg/laravel-improved-resource-controllers.svg?style=flat-square)](https://packagist.org/packages/timwassenburg/laravel-improved-resource-controllers)
+[![Total Downloads](https://img.shields.io/packagist/dt/timwassenburg/laravel-improved-resource-controllers.svg?style=flat-square)](https://packagist.org/packages/timwassenburg/laravel-improved-resource-controllers)
+[![License](https://img.shields.io/packagist/l/timwassenburg/laravel-improved-resource-controllers)](https://packagist.org/packages/timwassenburg/laravel-improved-resource-controllers)
+
 ## Table of Contents
   <ol>
     <li><a href="#features">Features</a></li>
@@ -57,12 +61,12 @@ You still have to add your own routes, validation, migrations, etc.
 
 ### Installation
 Require the package with composer.
-```
+```bash
 composer require timwassenburg/laravel-improved-resource-controllers
 ```
 
 ### Publish config (optional)
-```
+```bash
 php artisan vendor:publish --provider="TimWassenburg\ImprovedResourceControllers\ImprovedResourceControllersServiceProvider" --tag="config"
 ```
 
@@ -70,7 +74,7 @@ php artisan vendor:publish --provider="TimWassenburg\ImprovedResourceControllers
 To change the generated resource controllers you can override
 the stubs and adjust it to your liking. The stubs will be stored in /resources/stubs.
 
-```
+```bash
 php artisan vendor:publish --provider="TimWassenburg\ImprovedResourceControllers\ImprovedResourceControllersServiceProvider" --tag="stubs"
 ```
 
@@ -79,37 +83,37 @@ The idea behind this package is that you can keep using the make:controller comm
 So no need to change your muscle memory. Checkout the example output to see the result for each command.
 
 ### Default resource controller
-```
+```bash
 php artisan make:controller CustomerController --resource
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/DefaultResourceController.php)
 
 ### Default API resource controller
-```
+```bash
 php artisan make:controller CustomerController --resource --api
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/DefaultApiResourceController.php)
 
 ### Model resource controller
-```
+```bash
 php artisan make:controller CustomerController --resource --model=Customer
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/ModelResourceController.php)
 
 ### Model API resource controller
-```
+```bash
 php artisan make:controller CustomerController --resource --model=Customer --api
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/ModelApiResourceController.php)
 
 ### Nested resource controller
-```
+```bash
 php artisan make:controller CityController --resource --parent=Country --model=City
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/NestedResourceController.php)
 
 ### Nested API resource controller
-```
+```bash
 php artisan make:controller CityController --resource --parent=Country --model=City --api
 ```
 [Example output](https://github.com/timwassenburg/laravel-improved-resource-controllers/tree/master/examples/NestedApiResourceController.php)
