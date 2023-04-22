@@ -1,20 +1,10 @@
-<br />
-<div align="center">
-  <a href="https://github.com/timwassenburg/laravel-improved-resource-controllers">
-    <img src="img/wrench.png" alt="Logo" width=120>
-  </a>
-
-<h1 align="center">Laravel Improved Resource Controllers</h1>
-
-  <p align="center">
-    Quickly generate resource controllers with code for your projects!
-  </p>
-<br><br>
-</div>
+<img src="img/banner.png" alt="Logo">
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/timwassenburg/laravel-improved-resource-controllers.svg?style=flat-square)](https://packagist.org/packages/timwassenburg/laravel-improved-resource-controllers)
 [![Total Downloads](https://img.shields.io/packagist/dt/timwassenburg/laravel-improved-resource-controllers.svg?style=flat-square)](https://packagist.org/packages/timwassenburg/laravel-improved-resource-controllers)
 [![License](https://img.shields.io/packagist/l/timwassenburg/laravel-improved-resource-controllers)](https://packagist.org/packages/timwassenburg/laravel-improved-resource-controllers)
+
+<hr>
 
 ## Table of Contents
   <ol>
