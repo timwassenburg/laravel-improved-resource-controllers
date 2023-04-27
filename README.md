@@ -52,7 +52,7 @@ You still have to add your own routes, validation, migrations, etc.
 ### Installation
 Require the package with composer.
 ```bash
-composer require timwassenburg/laravel-improved-resource-controllers
+composer require timwassenburg/laravel-improved-resource-controllers --dev
 ```
 
 ### Publish config (optional)
