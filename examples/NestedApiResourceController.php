@@ -13,7 +13,6 @@ class CityController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Country  $country
      * @return JsonResponse
      */
     public function index(Country $country)
@@ -26,8 +25,6 @@ class CityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
-     * @param  Country  $country
      * @return JsonResponse
      */
     public function store(Request $request, Country $country)
@@ -40,8 +37,6 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Country  $country
-     * @param  City  $city
      * @return JsonResponse
      */
     public function show(Country $country, City $city)
@@ -54,9 +49,6 @@ class CityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  Country  $country
-     * @param  City  $city
      * @return JsonResponse
      */
     public function update(Request $request, Country $country, City $city)
@@ -69,8 +61,6 @@ class CityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Country  $country
-     * @param  City  $city
      * @return JsonResponse
      */
     public function destroy(Country $country, City $city)

@@ -22,11 +22,11 @@ class ImprovedResourceControllersServiceProvider extends ArtisanServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../stubs' => resource_path('stubs'),
+                __DIR__.'/../stubs' => resource_path('stubs'),
             ], 'stubs');
 
             $this->publishes([
-                __DIR__ . '/../config/crud.php' => config_path('crud.php'),
+                __DIR__.'/../config/crud.php' => config_path('crud.php'),
             ], 'config');
         }
     }

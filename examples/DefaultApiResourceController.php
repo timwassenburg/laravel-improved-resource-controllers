@@ -23,7 +23,6 @@ class CustomerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
      * @return JsonResponse
      */
     public function store(Request $request)
@@ -47,7 +46,6 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
      * @param  int  $id
      * @return JsonResponse
      */

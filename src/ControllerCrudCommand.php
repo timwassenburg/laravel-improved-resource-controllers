@@ -44,8 +44,6 @@ class ControllerCrudCommand extends ControllerMakeCommand
     }
 
     /**
-     * @param $replace
-     * @param $name
      * @return mixed
      */
     protected function buildCrudReplacements($replace, $name)
@@ -56,16 +54,13 @@ class ControllerCrudCommand extends ControllerMakeCommand
         ($this->option('model') || $this->option('empty')) ?: $this->checkIfModelExists($modelName);
 
         $replace['{{ model }}'] = $modelName;
-        $replace['{{ namespacedModel }}'] = config('crud.model_namespace') . $modelName;
+        $replace['{{ namespacedModel }}'] = config('crud.model_namespace').$modelName;
         $replace['{{ modelVariable }}'] = Str::singular(Str::camel($modelName));
         $replace['{{ modelVariablePlural }}'] = Str::plural(Str::camel($modelName));
 
         return $replace;
     }
 
-    /**
-     * @param $modelName
-     */
     protected function checkIfModelExists($modelName)
     {
         $modelClass = $this->parseModel($modelName);
@@ -101,12 +96,12 @@ class ControllerCrudCommand extends ControllerMakeCommand
             return parent::resolveStubPath($stub);
         }
 
-        if (file_exists(app('path.resources') . $stub)) {
-            return app('path.resources') . $stub;
+        if (file_exists(app('path.resources').$stub)) {
+            return app('path.resources').$stub;
         }
 
         if ($this->option('crud') || config('crud.use_by_default')) {
-            return __DIR__ . '/..' . $stub;
+            return __DIR__.'/..'.$stub;
         }
 
         return parent::resolveStubPath($stub);

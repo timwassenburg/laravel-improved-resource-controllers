@@ -13,7 +13,6 @@ class CityController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param  Country  $country
      * @return View
      */
     public function index(Country $country)
@@ -26,7 +25,6 @@ class CityController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @param  Country  $country
      * @return View
      */
     public function create(Country $country)
@@ -37,8 +35,6 @@ class CityController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
-     * @param  Country  $country
      * @return RedirectResponse
      */
     public function store(Request $request, Country $country)
@@ -52,8 +48,6 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Country  $country
-     * @param  City  $city
      * @return View
      */
     public function show(Country $country, City $city)
@@ -64,8 +58,6 @@ class CityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Country  $country
-     * @param  City  $city
      * @return View
      */
     public function edit(Country $country, City $city)
@@ -76,9 +68,6 @@ class CityController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  Country  $country
-     * @param  City  $city
      * @return RedirectResponse
      */
     public function update(Request $request, Country $country, City $city)
@@ -92,8 +81,6 @@ class CityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Country  $country
-     * @param  City  $city
      * @return RedirectResponse
      */
     public function destroy(Country $country, City $city)
